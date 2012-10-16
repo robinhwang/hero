@@ -38,10 +38,10 @@
               <td>Question  <%= question.body %></td>
               <br>
               <td><%= question.date %></td>
-              <br>
-              <%= link_to 'New Question', new_question_path %>
             </tr>
           <% end %>
+          <br>
+              <%= link_to 'New Question', new_question_path %>
         </section>
 
         <%= yield %>
