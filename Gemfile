@@ -15,6 +15,11 @@ end
 gem 'therubyracer'
 gem 'execjs'
 
+# Bootstrap
+gem 'anjlab-bootstrap-rails', '2.0.3.2', :require => 'bootstrap-rails'
+gem 'bootstrap-will_paginate', '0.0.3'
+gem 'bootstrap_helper', "1.4.1"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
