@@ -544,7 +544,9 @@ checked program was:
 "gcc -o conftest -I/home/robin/.rvm/rubies/ruby-1.9.3-p194/include/ruby-1.9.1/i686-linux -I/home/robin/.rvm/rubies/ruby-1.9.3-p194/include/ruby-1.9.1/ruby/backward -I/home/robin/.rvm/rubies/ruby-1.9.3-p194/include/ruby-1.9.1 -I. -I/home/robin/.rvm/usr/include  -D_FILE_OFFSET_BITS=64  -I/usr/include/postgresql  -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC conftest.c  -L. -L/home/robin/.rvm/rubies/ruby-1.9.3-p194/lib -Wl,-R/home/robin/.rvm/rubies/ruby-1.9.3-p194/lib -L/home/robin/.rvm/usr/lib -Wl,-R/home/robin/.rvm/usr/lib -L.  -rdynamic -Wl,-export-dynamic -L/usr/lib    -lpq  -Wl,-R -Wl,/home/robin/.rvm/rubies/ruby-1.9.3-p194/lib -L/home/robin/.rvm/rubies/ruby-1.9.3-p194/lib -lruby -lpq  -lpthread -lrt -ldl -lcrypt -lm   -lc"
 conftest.c: 在函数‘t’中:
 conftest.c:5:1: 警告： 隐式声明函数‘rb_enc_alias’ [-Wimplicit-function-declaration]
-/tmp/ccjFcAPT.o: In function `t':
+
+/tmp/cckIXULU.o: In function `t':
+
 /home/robin/hero/vendor/bundle/ruby/1.9.1/gems/pg-0.14.1/ext/conftest.c:5: undefined reference to `rb_enc_alias'
 collect2: ld 返回 1
 checked program was:
