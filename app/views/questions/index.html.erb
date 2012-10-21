@@ -41,17 +41,16 @@
       <section id="content">
         <section id="flash">
           <% @questions.each do |question| %>
-            <tr>
-              <td>Users :<%= question.user_id %></td>
-              <td>Title: <%= question.title %></td>
-              <br>
-              <td>Question  <%= question.body %></td>
-              <br>
-              <td><%= question.date %></td>
-            </tr>
+            <article class="article">
+              <div class="title"><%= question.title %></div>
+              <div class="ussername"><%= question.title %></div>
+              <div class="time"><%= question.title %></div>
+            </article>
           <% end %>
           <br>
-              <%= link_to 'New Question', new_question_path %>
+              <% if user_signed_in? %>
+                <%= link_to 'New Question', new_question_path %>
+              <% end %>
         </section>
 
         <%= yield %>
