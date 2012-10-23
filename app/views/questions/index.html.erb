@@ -40,13 +40,13 @@
     <section id="maincontainer">
       <section id="content">
         <section id="flash">
-          <% Question.all.each do |question| %>
+          <% @questions.each do |question| %>
             <article class="article">
               <div class="title"><%= question.title %></div>
-              <% if question.user.username %>
-              <div class="username"><%= question.user.username %></div>
+              <% if question.user_username %>
+                <div class="username"><%= question.user_username %></div>
               <% else %>
-              <div class="username"><%= question.user_id %></div>
+                <div class="username"><%= question.user_id %></div>
               <% end %>
             </article>
           <% end %>
