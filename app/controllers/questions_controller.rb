@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.json
   def new
-    @question = Question.new
+    @question = current_user.questions.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(params[:question])
+    @question = current_user.questions.new(params[:question])
 
     respond_to do |format|
       if @question.save
@@ -56,7 +56,7 @@ class QuestionsController < ApplicationController
   # PUT /questions/1
   # PUT /questions/1.json
   def update
-    @question = Question.find(params[:id])
+    @question = current_user.questions.find(params[:id])
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
@@ -72,12 +72,15 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
-    @question = Question.find(params[:id])
+    @question = current_user.question.find(params[:id])
     @question.destroy
 
     respond_to do |format|
       format.html { redirect_to questions_url }
       format.json { head :no_content }
     end
+  end
+  def about
+    
   end
 end
