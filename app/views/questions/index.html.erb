@@ -42,7 +42,7 @@
         <section id="flash">
           <% @questions.each do |question| %>
             <article class="article">
-              <div class="title"><%= question.title %></div>
+              <div class="title"><%= link_to question.title,  question_path(question) %></div>
               <% if question.user_username %>
                 <div class="username"><%= question.user_username %></div>
               <% else %>
