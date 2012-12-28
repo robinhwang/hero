@@ -8,4 +8,6 @@ Hero::Application.routes.draw do
   end
 
   root :to => 'questions#index'
+
+  resources :users, :only => ["show"]
 end

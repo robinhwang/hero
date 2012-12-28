@@ -1,0 +1,6 @@
+<%= @user.username %> <br> <hr>
+<% @user.questions.each do |q| %>
+	questions: <%= q.title %> <br>
+	details : <%= q.body %> <br>
+	<hr>
+<% end %>
