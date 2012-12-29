@@ -3,5 +3,6 @@ class Question < ActiveRecord::Base
 
   delegate :username,    :to => :user, :prefix => true, :allow_nil => true
 
+  has_many :comments
   belongs_to :user, :foreign_key => :user_id
 end
