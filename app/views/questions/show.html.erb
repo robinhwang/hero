@@ -15,13 +15,34 @@
   <%= @question.body %>
 </p>
 
-<p>
   <b>Date:</b>
   <%= @question.date %>
 </p>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user == @question.user %>
 <%= link_to 'Edit', edit_question_path(@question) %>|
 <% end %>
 
 <%= link_to 'Back', questions_path %>
+
+<h5>Comments:</h5>
+<% @question.comments.each do |comment| %>
+
+  <p>
+    <b>Comment :</b>
+    <%= comment.body %>
+  </p>
+<% end %>
+<br>
+<h5>Add a comment:</h5>
+<%= form_for([@question, @question.comments.build]) do |f| %>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

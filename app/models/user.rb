@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 
   has_many :questions, :dependent => :destroy
-  has_many :comments, :dependent => :destroy
+  has_many :comments, :through => :questions, :dependent => :destroy
   # attr_accessible :title, :body
 end

@@ -5,4 +5,7 @@ class Question < ActiveRecord::Base
 
   has_many :comments
   belongs_to :user, :foreign_key => :user_id
+
+  validates :body,  :presence => true
+  validates :title, :presence => true
 end
