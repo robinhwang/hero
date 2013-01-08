@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1.json
   def show
     @question = Question.find(params[:id])
+    @question.update_attribute(:count, @question.count + 1)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +42,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = current_user.questions.new(params[:question])
+    @question.count = 0
 
     respond_to do |format|
       if @question.save
@@ -83,5 +85,7 @@ class QuestionsController < ApplicationController
   def about
     
   end
+  
+  
 
 end
